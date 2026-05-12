@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portugal em Rede | Agrupamento de Escolas da Batalha</title>
+    <link rel="icon" type="image/x-icon" href="Imagens/most.ico">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── CLUBE BANNER NO TOPO ── */
+        .clube-banner-topo {
+            background: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 100%);
+            border-bottom: 2px solid var(--primary-blue, #003399);
+            padding: 14px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        [data-theme="dark"] .clube-banner-topo {
+            background: linear-gradient(135deg, #0d1b3e 0%, #0a1628 100%);
+            border-bottom-color: #4a7fd4;
+        }
+
+        .clube-banner-topo .clube-logos {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        /* tooltip wrapper */
+        .clube-banner-topo .logo-tooltip-wrap {
+            position: relative;
+            display: inline-flex;
+        }
+
+        .clube-banner-topo .logo-tooltip-wrap img {
+            width: 72px;
+            height: 72px;
+            object-fit: contain;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            transition: transform .25s, border-color .25s, box-shadow .25s;
+            cursor: pointer;
+            background: #fff;
+            padding: 4px;
+        }
+
+        .clube-banner-topo .logo-tooltip-wrap:hover img {
+            transform: translateY(-4px) scale(1.07);
+            border-color: var(--primary-blue, #003399);
+            box-shadow: 0 8px 20px rgba(0,51,153,.18);
+        }
+
+        /* tooltip global via JS – ver script no fim */
+        #global-tooltip {
+            position: fixed;
+            z-index: 9999;
+            background: #1a2a5e;
+            color: #fff;
+            font-size: .78rem;
+            font-weight: 500;
+            white-space: nowrap;
+            padding: 6px 14px;
+            border-radius: 6px;
+            pointer-events: none;
+            box-shadow: 0 4px 16px rgba(0,0,0,.28);
+            opacity: 0;
+            transition: opacity .18s ease;
+        }
+        #global-tooltip::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-bottom-color: #1a2a5e;
+        }
+        #global-tooltip.visible { opacity: 1; }
+
+        .clube-banner-topo .clube-texto {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .clube-banner-topo .clube-tema-label {
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--primary-blue, #003399);
+        }
+
+        [data-theme="dark"] .clube-banner-topo .clube-tema-label {
+            color: #7aa8e8;
+        }
+
+        .clube-banner-topo .clube-tema {
+            font-size: .97rem;
+            font-style: italic;
+            color: #1a1a2e;
+            margin: 0;
+            max-width: 420px;
+            line-height: 1.45;
+        }
+
+        [data-theme="dark"] .clube-banner-topo .clube-tema {
+            color: #c8d8f0;
+        }
+
+        /* ── HERO COM ESCOLA ── */
+        .hero-escola-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .hero-escola-wrap a img {
+            width: 90px;
+            height: auto;
+            filter: drop-shadow(0 4px 12px rgba(0,0,0,.35));
+            transition: transform .25s, filter .25s;
+        }
+
+        .hero-escola-wrap a:hover img {
+            transform: scale(1.08);
+            filter: drop-shadow(0 6px 18px rgba(0,0,0,.5));
+        }
+
+        .hero-escola-nome {
+            font-size: .82rem;
+            font-weight: 600;
+            color: rgba(255,255,255,.85);
+            letter-spacing: .04em;
+            text-align: center;
+            text-shadow: 0 1px 4px rgba(0,0,0,.4);
+        }
+
+        /* ── CARD VILA DA BATALHA – ícone imagem ── */
+        .card-icon-img {
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
+            margin-bottom: 4px;
+        }
+
+        /* ── esconde o banner antigo (mantido no HTML original para nada quebrar) ── */
+        .clube-banner {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ══════════════════════ TAREFA 1 · BANNER CLUBE EUROPEU NO TOPO ══════════════ -->
+<div class="clube-banner-topo">
+    <div class="clube-logos">
+        <div class="logo-tooltip-wrap" data-tooltip="Logo Clube Europeu – Agrupamento de Escolas da Batalha">
+            <img src="Imagens/logo_clube_europeu.jfif" alt="Logo Clube Europeu AEB">
+        </div>
+        <div class="logo-tooltip-wrap" data-tooltip="Rede Nacional de Clubes Europeus">
+            <img src="Imagens/clubes europeus_nacional.png" alt="Rede Nacional de Clubes Europeus">
+        </div>
+        <div class="logo-tooltip-wrap" data-tooltip="40 anos de Portugal na União Europeia">
+            <img src="Imagens/40 anos_portugal.jpg" alt="40 Anos de Portugal na UE">
+        </div>
+    </div>
+    <div class="clube-texto">
+        <span class="clube-tema-label">Tema Nacional dos Clubes Europeus</span>
+        <p class="clube-tema">1986–2026 – 40 anos de Portugal no espaço comum europeu. O que mudou?</p>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ CABEÇALHO -->
+<header>
+    <a href="index.html" class="logo">
+        <span style="color:var(--eu-yellow);">★</span>
+        <span style="color:var(--primary-blue);">PORTUGAL EM REDE</span>
+    </a>
+
+    <nav>
+        <a href="index.html"       class="buton_header active">Início</a>
+        <a href="1986.html"        class="buton_header">1986</a>
+        <a href="2026.html"        class="buton_header">2026</a>
+        <a href="comparacao.html"  class="buton_header">Comparação</a>
+        <a href="trabalhos.html"   class="buton_header">Trabalhos</a>
+        <a href="projetos.html"    class="buton_header">Projetos</a>
+    </nav>
+
+    <button id="theme-toggle">
+        <img id="theme-icon" src="Imagens/iconmoon.png" alt="tema">
+    </button>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════ HERO -->
+<section class="hero">
+    <div class="hero-content">
+
+        <!-- TAREFA 2 · Logo da escola dentro do hero, com link -->
+        <div class="hero-escola-wrap">
+            <a href="https://agbatalha.pt/portal/" target="_blank" rel="noopener noreferrer" title="Visitar o site do Agrupamento de Escolas da Batalha">
+                <img src="Imagens/SimboloAEB.png" alt="Agrupamento de Escolas da Batalha">
+            </a>
+            <span class="hero-escola-nome">Agrupamento de Escolas da Batalha</span>
+        </div>
+
+        <div class="hero-badge">🇪🇺 1986 – 2026</div>
+        <h1>Portugal Conectado</h1>
+        <p>Explora a história das redes de comunicação de Portugal através deste website do Agrupamento de Escolas da Batalha — há 40 anos, hoje, e o que mudou.</p>
+        <div class="hero-btns">
+            <a href="1986.html" class="hero-btn hero-btn-primary">Descobrir 1986</a>
+            <a href="2026.html" class="hero-btn hero-btn-outline">Ver o Presente</a>
+        </div>
+    </div>
+</section>
+
+<!-- Banner original mantido mas oculto via CSS para não perder referências -->
+<section class="clube-banner" aria-hidden="true">
+    <div class="clube-logos">
+        <img src="Imagens/logo_clube_europeu.jfif"     alt="">
+        <img src="Imagens/clubes europeus_nacional.png" alt="">
+        <img src="Imagens/40 anos_portugal.jpg"         alt="">
+    </div>
+    <div class="clube-texto">
+        <span class="clube-tema-label">Tema Nacional dos Clubes Europeus</span>
+        <p class="clube-tema">1986–2026 – 40 anos de Portugal no espaço comum europeu. O que mudou?</p>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ INTRODUÇÃO -->
+<section class="intro-section">
+    <div class="intro-inner">
+        <div class="intro-text-col">
+            <span class="section-label">Introdução ao Tema</span>
+            <h2>40 anos de <em>Portugal</em> na <em>União Europeia</em></h2>
+            <p>A entrada de Portugal na Comunidade Económica Europeia (CEE), em 1986, foi um marco histórico com impacto profundo no desenvolvimento socioeconómico do país.</p>
+            <p>Uma das áreas que mais se transformou foi a das <strong>comunicações</strong>. Antes da adesão, Portugal tinha estruturas limitadas, serviços pouco eficientes e um mercado fechado que dificultava a ligação ao resto da Europa.</p>
+            <p>Após a entrada na CEE, o país beneficiou de investimentos estruturais e de apoio dos parceiros europeus, o que despoletou a liberalização do mercado e uma rápida evolução tecnológica — aproximando Portugal do padrão europeu e integrando-o plenamente a nível económico, social e digital.</p>
+        </div>
+        <div class="intro-stats-col">
+            <div class="stat-card">
+                <div class="stat-num">1986</div>
+                <div class="stat-label">Adesão à CEE</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">40</div>
+                <div class="stat-label">Anos de transformação</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">2026</div>
+                <div class="stat-label">Portugal digital</div>
+            </div>
+            <div class="stat-card highlight-stat">
+                <div class="stat-num">🇪🇺</div>
+                <div class="stat-label">Espaço comum europeu</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════ CARDS -->
+<section class="cards-section">
+    <div class="cards-header">
+        <span class="section-label">Explora o Projeto</span>
+        <h2>O que podes descobrir aqui</h2>
+    </div>
+    <div class="container">
+        <div class="card">
+            <div class="card-icon">📡</div>
+            <h3 class="nomes">Portugal em <strong>1986</strong></h3>
+            <p>Verifica como era o estado de Portugal na década de 1980 a nível de redes e comunicações.</p>
+            <a href="1986.html" class="btn">Saber Mais</a>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🌐</div>
+            <h3 class="nomes">Portugal em <strong>2026</strong></h3>
+            <p>Verifica como é o estado de Portugal hoje em dia a nível de redes e comunicações, e como estamos a evoluir.</p>
+            <a href="2026.html" class="btn">Saber Mais</a>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">⚖️</div>
+            <h3 class="nomes">Comparação</h3>
+            <p>Observa e compara as diferenças entre as redes e comunicações de hoje e de 40 anos atrás.</p>
+            <a href="comparacao.html" class="btn">Saber Mais</a>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">📁</div>
+            <h3 class="nomes">Trabalhos</h3>
+            <p>Consulta os trabalhos desenvolvidos pelos alunos do Clube Europeu: PDFs, apresentações e vídeos.</p>
+            <a href="trabalhos.html" class="btn">Ver Trabalhos</a>
+        </div>
+
+        <!-- TAREFA 3 · Ícone most.ico no card Vila da Batalha -->
+        <div class="card">
+            <div class="card-icon" style="font-size:0; line-height:0;">
+                <img src="Imagens/most.ico" alt="Ícone Vila da Batalha" class="card-icon-img">
+            </div>
+            <h3 class="nomes">Vila da Batalha</h3>
+            <p>Visita o site interativo sobre a transformação da Vila da Batalha antes e depois da União Europeia.</p>
+            <a href="site-batalha/index.html" target="_blank" class="btn">Visitar Site</a>
+        </div>
+
+        <div class="card card-youtube">
+            <div class="card-icon">▶</div>
+            <h3 class="nomes">Canal YouTube</h3>
+            <p>Segue o nosso canal com vídeos das atividades e projetos do Clube Europeu da Batalha.</p>
+            <a href="https://youtube.com/@clubeeuropeuaebatalha?si=-59rmMdxGHo98Psa" target="_blank" rel="noopener noreferrer" class="btn btn-red">Ver Canal</a>
+        </div>
+    </div>
+</section>
+
+<!-- ════════════════════════════════════════ RODAPÉ -->
+<footer class="footer-novo">
+    <div class="footer-grid">
+
+        <div class="footer-col">
+            <h4>Sobre este Projeto</h4>
+            <p>Este site foi desenvolvido no âmbito da disciplina de <em>Redes de Comunicação – Módulo 4 – Desenvolvimento de Páginas Web Estáticas</em>, integrado no projeto <strong>"Portugal em Rede – 1986 vs 2026"</strong>, em resposta ao desafio lançado pelo nosso Clube Europeu subordinado ao tema nacional <em>"1986–2026: 40 anos de Portugal no espaço comum europeu. O que mudou?"</em></p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Navegação</h4>
+            <ul class="footer-links">
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="1986.html">Portugal em 1986</a></li>
+                <li><a href="2026.html">Portugal em 2026</a></li>
+                <li><a href="comparacao.html">Comparação</a></li>
+                <li><a href="trabalhos.html">Trabalhos</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Agrupamento de Escolas</h4>
+            <a href="https://agbatalha.pt/portal/" target="_blank" rel="noopener noreferrer" class="footer-btn-agrupamento">
+                🏫 Visitar site do Agrupamento
+            </a>
+            <div class="footer-morada">
+                <span>📍 Estrada da Freiria, 2440-062 Batalha</span>
+            </div>
+            <a href="https://youtube.com/@clubeeuropeuaebatalha?si=-59rmMdxGHo98Psa" target="_blank" rel="noopener noreferrer" class="footer-btn-youtube">
+                ▶ Canal YouTube do Clube Europeu
+            </a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <span>Trabalho desenvolvido pelos alunos do 11.º E de TGPSI em Redes de Comunicação</span>
+        <span>© 2026 &nbsp;<span class="footer-eu-badge">UE</span></span>
+    </div>
+</footer>
+
+<!-- tooltip global: nunca cortado pela barra do browser -->
+<div id="global-tooltip"></div>
+
+<script>
+// ── Tooltip global posicionado com position:fixed ──────────────────────
+(function () {
+    const tip = document.getElementById('global-tooltip');
+    let hideTimer;
+
+    document.querySelectorAll('[data-tooltip]').forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            clearTimeout(hideTimer);
+            tip.textContent = el.dataset.tooltip;
+
+            const rect = el.getBoundingClientRect();
+            tip.style.left      = (rect.left + rect.width / 2) + 'px';
+            tip.style.top       = (rect.bottom + 10) + 'px';
+            tip.style.transform = 'translateX(-50%)';
+            tip.classList.add('visible');
+        });
+
+        el.addEventListener('mouseleave', () => {
+            hideTimer = setTimeout(() => tip.classList.remove('visible'), 120);
+        });
+    });
+})();
+
+// ── Theme toggle ───────────────────────────────────────────────────────
+const btn  = document.getElementById('theme-toggle');
+const icon = document.getElementById('theme-icon');
+const html = document.documentElement;
+
+if (localStorage.getItem('theme') === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+    icon.src = "Imagens/iconsun.png";
+}
+btn.addEventListener('click', () => {
+    const dark = html.getAttribute('data-theme') === 'dark';
+    if (dark) {
+        html.removeAttribute('data-theme');
+        icon.src = "Imagens/iconmoon.png";
+        localStorage.setItem('theme', 'light');
+    } else {
+        html.setAttribute('data-theme', 'dark');
+        icon.src = "Imagens/iconsun.png";
+        localStorage.setItem('theme', 'dark');
+    }
+});
+</script>
+</body>
+</html>

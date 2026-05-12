@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vila da Batalha - Antes e Depois da União Europeia</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">B</div>
+                <div class="logo-text">
+                    <span class="logo-title">Batalha</span>
+                    <span class="logo-subtitle">1986-2025</span>
+                </div>
+            </a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link active">Início</a>
+                <a href="antes.html" class="nav-link">Como Era</a>
+                <a href="depois.html" class="nav-link">Como Ficou</a>
+                <a href="mosteiro.html" class="nav-link">Mosteiro</a>
+                <a href="../index.html" class="nav-link" style="border-left:1px solid rgba(255,255,255,0.3); padding-left:1.2rem; margin-left:0.5rem; opacity:0.8;">← Portugal em Rede</a>
+            </nav>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+        <nav class="nav-mobile" id="navMobile">
+            <a href="index.html" class="nav-mobile-link active">Início</a>
+            <a href="antes.html" class="nav-mobile-link">Como Era</a>
+            <a href="depois.html" class="nav-mobile-link">Como Ficou</a>
+            <a href="mosteiro.html" class="nav-mobile-link">Mosteiro</a>
+            <a href="../index.html" class="nav-mobile-link" style="opacity:0.75; border-top:1px solid rgba(255,255,255,0.15); margin-top:0.5rem; padding-top:0.8rem;">← Voltar ao Portugal em Rede</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-bg" style="background-image: url('https://images.pexels.com/photos/24778044/pexels-photo-24778044.jpeg?auto=compress&cs=tinysrgb&w=1920');"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-badge">1986 - 2025 · Quase 40 anos de transformação</span>
+            <h1 class="hero-title">Vila da Batalha</h1>
+            <p class="hero-subtitle">Antes e Depois da União Europeia</p>
+            <p class="hero-description">Uma viagem no tempo para descobrir como a adesão de Portugal à Comunidade Europeia transformou esta vila histórica do centro de Portugal.</p>
+            <div class="hero-buttons">
+                <a href="antes.html" class="btn btn-primary">Descobrir como era</a>
+                <a href="depois.html" class="btn btn-secondary">Ver as transformações</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+        </div>
+    </section>
+
+    <section class="section section-light">
+        <div class="container">
+            <div class="text-center mb-16">
+                <h2 class="section-title">Uma Vila, Duas Eras</h2>
+                <p class="section-text">A 1 de janeiro de 1986, Portugal entrava oficialmente para a Comunidade Económica Europeia. Para a Vila da Batalha, este momento marcou o início de uma profunda transformação que alterou a paisagem, a economia e a vida dos seus habitantes.</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <p class="stat-value">39</p><p class="stat-label">Anos na UE</p>
+                </div>
+                <div class="stat-card">
+                    <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"></path><path d="M5 21V7l8-4v18"></path><path d="M19 21V11l-6-4"></path></svg>
+                    <p class="stat-value">UNESCO</p><p class="stat-label">Património Mundial</p>
+                </div>
+                <div class="stat-card">
+                    <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                    <p class="stat-value">+30%</p><p class="stat-label">Crescimento Populacional</p>
+                </div>
+                <div class="stat-card">
+                    <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <p class="stat-value">300K+</p><p class="stat-label">Visitantes Anuais</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container">
+            <h2 class="section-title section-title-light">Marcos Históricos</h2>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-item timeline-item-left">
+                    <div class="timeline-content"><span class="timeline-year">1983</span><h3 class="timeline-title">Património Mundial</h3><p class="timeline-desc">Mosteiro da Batalha classificado pela UNESCO</p></div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item timeline-item-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content"><span class="timeline-year">1986</span><h3 class="timeline-title">Adesão à CEE</h3><p class="timeline-desc">Portugal entra na Comunidade Económica Europeia</p></div>
+                </div>
+                <div class="timeline-item timeline-item-left">
+                    <div class="timeline-content"><span class="timeline-year">2000s</span><h3 class="timeline-title">Fundos Estruturais</h3><p class="timeline-desc">Investimentos em infraestruturas e reabilitação urbana</p></div>
+                    <div class="timeline-dot"></div>
+                </div>
+                <div class="timeline-item timeline-item-right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content"><span class="timeline-year">2016</span><h3 class="timeline-title">PARU</h3><p class="timeline-desc">Plano de Ação de Regeneração Urbana da Vila</p></div>
+                </div>
+                <div class="timeline-item timeline-item-left">
+                    <div class="timeline-content"><span class="timeline-year">2024</span><h3 class="timeline-title">Acesso 52</h3><p class="timeline-desc">Entrada gratuita para residentes nacionais</p></div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-title">Explore a Transformação</h2>
+            <div class="cards-grid">
+                <a href="antes.html" class="card-link">
+                    <div class="card">
+                        <div class="card-image" style="background-image: url('https://images.pexels.com/photos/34477199/pexels-photo-34477199.jpeg');">
+                            <div class="card-image-overlay"></div>
+                            <div class="card-image-text"><span class="card-image-label">Até 1986</span><h3 class="card-image-title">Como Era</h3></div>
+                        </div>
+                        <div class="card-body"><p class="card-text">Descubra como era a Vila da Batalha antes da adesão à União Europeia: uma vila rural com desafios económicos e infraestruturais.</p></div>
+                    </div>
+                </a>
+                <a href="depois.html" class="card-link">
+                    <div class="card">
+                        <div class="card-image" style="background-image: url('images/uniao.jpg');">
+                            <div class="card-image-overlay"></div>
+                            <div class="card-image-text"><span class="card-image-label">1986 - Presente</span><h3 class="card-image-title">Como Ficou</h3></div>
+                        </div>
+                        <div class="card-body"><p class="card-text">Conheça as transformações trazidas pelos fundos europeus: reabilitação urbana, turismo sustentável e desenvolvimento económico.</p></div>
+                    </div>
+                </a>
+                <a href="mosteiro.html" class="card-link">
+                    <div class="card">
+                        <div class="card-image" style="background-image: url('https://images.pexels.com/photos/24778044/pexels-photo-24778044.jpeg?auto=compress&cs=tinysrgb&w=800');">
+                            <div class="card-image-overlay"></div>
+                            <div class="card-image-text"><span class="card-image-label">Património Mundial</span><h3 class="card-image-title">O Mosteiro</h3></div>
+                        </div>
+                        <div class="card-body"><p class="card-text">O ex-líbris da vila: o Mosteiro de Santa Maria da Vitória, símbolo nacional e motor do desenvolvimento turístico.</p></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="container">
+            <blockquote class="quote">"A Batalha de Aljubarrota construiu Portugal. A União Europeia ajudou a construir a Batalha moderna."</blockquote>
+            <p class="quote-author">— Uma reflexão sobre 40 anos de transformação</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">Sobre este Projeto</h3>
+                    <p class="footer-text">Este site foi desenvolvido no âmbito da disciplina de Serviço Digital, integrado no projeto *“A minha terra antes e depois de 1986”*, em resposta ao desafio lançado pelo nosso Clube Europeu subordinado ao tema nacional *“1986–2026: 40 anos de Portugal no espaço comum europeu. O que mudou?”
+ .</p>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Navegação</h3>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Página Inicial</a></li>
+                        <li><a href="antes.html">Como Era (Até 1986)</a></li>
+                        <li><a href="depois.html">Como Ficou (Pós 1986)</a></li>
+                        <li><a href="mosteiro.html">Mosteiro da Batalha</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Agrupamento de Escolas</h3>
+                    <a href="https://agbatalha.pt/portal/" target="_blank" rel="noopener noreferrer" class="footer-btn">
+                        <svg class="footer-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                        Visitar site do Agrupamento
+                    </a>
+                    <p class="footer-address">
+                        <svg class="footer-address-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Estrada da Freiria, 2440-062 Batalha
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="footer-credits">Vila da Batalha · Leiria · Portugal — vista pelos alunos do 12ºE de Serviço Digital</p>
+                <div class="footer-year"><span>2026</span><span class="eu-badge">UE</span></div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

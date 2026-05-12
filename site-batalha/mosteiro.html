@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mosteiro da Batalha - Património Mundial UNESCO</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ── Galeria fotográfica ── */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        .gallery-item {
+            margin: 0;
+            border-radius: 14px;
+            overflow: hidden;
+            background: var(--card-bg, #fff);
+            box-shadow: 0 4px 18px rgba(0,0,0,.12);
+            transition: transform .3s, box-shadow .3s;
+            display: flex;
+            flex-direction: column;
+        }
+        .gallery-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0,0,0,.2);
+        }
+        .gallery-item--wide {
+            grid-column: span 2;
+        }
+        @media (max-width: 680px) {
+            .gallery-item--wide { grid-column: span 1; }
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-item--wide img {
+            height: 300px;
+        }
+        .gallery-item figcaption {
+            padding: .9rem 1.1rem 1rem;
+            font-size: .88rem;
+            line-height: 1.55;
+            color: var(--text-muted, #555);
+            flex: 1;
+        }
+        .section-dark .gallery-item {
+            background: rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .section-dark .gallery-item figcaption {
+            color: rgba(255,255,255,0.75);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">B</div>
+                <div class="logo-text">
+                    <span class="logo-title">Batalha</span>
+                    <span class="logo-subtitle">1986-2025</span>
+                </div>
+            </a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="antes.html" class="nav-link">Como Era</a>
+                <a href="depois.html" class="nav-link">Como Ficou</a>
+                <a href="mosteiro.html" class="nav-link active">Mosteiro</a>
+                <a href="../index.html" class="nav-link" style="border-left:1px solid rgba(255,255,255,0.3); padding-left:1.2rem; margin-left:0.5rem; opacity:0.8;">← Portugal em Rede</a>
+            </nav>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+        <nav class="nav-mobile" id="navMobile">
+            <a href="index.html" class="nav-mobile-link">Início</a>
+            <a href="antes.html" class="nav-mobile-link">Como Era</a>
+            <a href="depois.html" class="nav-mobile-link">Como Ficou</a>
+            <a href="mosteiro.html" class="nav-mobile-link active">Mosteiro</a>
+            <a href="../index.html" class="nav-mobile-link" style="opacity:0.75; border-top:1px solid rgba(255,255,255,0.15); margin-top:0.5rem; padding-top:0.8rem;">← Voltar ao Portugal em Rede</a>
+        </nav>
+    </header>
+
+    <section class="mosteiro-hero" style="background-image: url('https://images.pexels.com/photos/24778044/pexels-photo-24778044.jpeg?auto=compress&cs=tinysrgb&w=1920');">
+        <div class="mosteiro-hero-overlay"></div>
+        <div class="mosteiro-hero-content">
+            <span class="mosteiro-badge">Património Mundial desde 1983</span>
+            <h1 class="mosteiro-title">Mosteiro da Batalha</h1>
+            <p class="mosteiro-subtitle">Mosteiro de Santa Maria da Vitória</p>
+            <p class="mosteiro-description">O ex-líbris da Vila da Batalha e um dos mais importantes monumentos nacionais, símbolo da identidade portuguesa e motor do desenvolvimento local.</p>
+        </div>
+    </section>
+
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-title">Um Tesouro Nacional</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <h3 class="feature-title">Património Mundial UNESCO</h3>
+                    <p class="feature-text">Classificado em 1983 como Património Mundial da Humanidade, reconhecendo o seu valor histórico e arquitetónico excepcional.</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <h3 class="feature-title">Séculos de História</h3>
+                    <p class="feature-text">Construído entre 1386 e 1517 para celebrar a vitória portuguesa na Batalha de Aljubarrota (1385), é um dos maiores tesouros da arquitetura gótica portuguesa.</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <h3 class="feature-title">3.º Mais Visitado</h3>
+                    <p class="feature-text">Em 2025, tornou-se o 3.º monumento mais visitado de Portugal, com mais de 300.000 visitantes anuais, superado apenas pelos Jerónimos e Torre de Belém.</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                    <h3 class="feature-title">Arquitetura Única</h3>
+                    <p class="feature-text">O Mosteiro combina estilos gótico, manuelino e renascentista. Os Capítulos Imperfeitos são uma das mais impressionantes obras arquitetónicas portuguesas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container">
+            <h2 class="section-title section-title-light">Apoio da União Europeia</h2>
+            <p class="section-subtitle-light">Os fundos europeus foram essenciais para a conservação e valorização do Mosteiro</p>
+            <div class="eu-support-grid">
+                <div class="eu-support-card"><div class="eu-support-icon">EU</div><h3 class="eu-support-title">Centro 2020</h3><p class="eu-support-text">Conservação e restauro</p></div>
+                <div class="eu-support-card"><div class="eu-support-icon">EU</div><h3 class="eu-support-title">Portugal 2030</h3><p class="eu-support-text">Modernização de infraestruturas</p></div>
+                <div class="eu-support-card"><div class="eu-support-icon">EU</div><h3 class="eu-support-title">PRR</h3><p class="eu-support-text">Obras de reabilitação</p></div>
+                <div class="eu-support-card"><div class="eu-support-icon">EU</div><h3 class="eu-support-title">FEDER</h3><p class="eu-support-text">Centro de Interpretação</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ GALERIA FOTOGRÁFICA ═══════════ -->
+
+    <!-- 1. O Mosteiro ao Longo do Tempo -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-title">O Mosteiro ao Longo do Tempo</h2>
+            <p class="section-text" style="text-align:center; max-width:700px; margin:0 auto 2.5rem;">De gravura oitocentista a fotografia aérea dos nossos dias — um olhar sobre a evolução do Mosteiro da Batalha.</p>
+            <div class="gallery-grid">
+
+                <figure class="gallery-item gallery-item--wide">
+                    <img src="images/most-antiga.PNG" alt="Gravura antiga do Mosteiro da Batalha" loading="lazy">
+                    <figcaption>Gravura do século XIX do Mosteiro da Batalha, publicada em <em>Monumentos de Portugal</em>. Retrata a fachada principal antes das grandes obras de restauro.</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="images/OIP.webp" alt="Artigo histórico sobre o Mosteiro da Batalha" loading="lazy">
+                    <figcaption>Artigo histórico da imprensa portuguesa descrevendo a fachada principal do Mosteiro, com fotografia da época.</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="images/1948-batalha-claustro-real.jpg" alt="Postal do Claustro Real em 1948" loading="lazy">
+                    <figcaption>Postal de 1948 mostrando o <strong>Claustro Real</strong> com os seus arcos manuelinos e o jardim interior ainda num estado diferente do atual.</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="images/MOSTEIRO-DA-BATALHA-1_editada.jpg" alt="Mosteiro da Batalha iluminado ao anoitecer" loading="lazy">
+                    <figcaption>O Mosteiro iluminado ao anoitecer, revelando a imponência da sua arquitetura gótico-manuelina sob a luz artificial.</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="images/Portugal-Batalha-600x400.jpg" alt="Fachada lateral e Claustro Real" loading="lazy">
+                    <figcaption>Vista da fachada lateral do Mosteiro e do <strong>Claustro Real</strong>, com os característicos ciprestes que emolduram o conjunto.</figcaption>
+                </figure>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Detalhes Arquitetónicos -->
+    <section class="section section-dark">
+        <div class="container">
+            <h2 class="section-title section-title-light">Detalhes Arquitetónicos</h2>
+            <p style="text-align:center; color:rgba(255,255,255,0.7); max-width:680px; margin:0 auto 2.5rem; font-size:0.97rem; line-height:1.6;">A arte manuelina e gótica esculpida em pedra — cada pormenor conta séculos de história.</p>
+            <div class="gallery-grid">
+
+                <figure class="gallery-item">
+                    <img src="images/_1408_porta_mosteirob1_5901d29184c57_625e9babcc4c6.jpg" alt="Tímpano da porta principal do Mosteiro" loading="lazy">
+                    <figcaption>Detalhe do <strong>tímpano da porta principal</strong>, com esculturas de figuras sagradas em relevo, exemplar da escultura gótica portuguesa do século XV.</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="images/_mosteiro_batalha14_5900d0e118066_625e9b8208742.jpg" alt="Coluna manuelina do Mosteiro da Batalha" loading="lazy">
+                    <figcaption>Vista em contrapicado de uma <strong>coluna manuelina</strong> do Mosteiro, mostrando a exuberância decorativa característica deste estilo arquitetónico único.</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="images/Capturar1.PNG" alt="Capelas Imperfeitas e decoração manuelina" loading="lazy">
+                    <figcaption>À esquerda, rica decoração manuelina entalhada em pedra de Ança; à direita, o interior das <strong>Capelas Imperfeitas</strong>, obra inacabada que permaneceu sem cobertura.</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="images/Batalha_Monastery_Portugal-53-L.jpg" alt="Corredor do Claustro Real com arcos góticos" loading="lazy">
+                    <figcaption>O corredor do <strong>Claustro Real</strong> com os seus arcos ogivais e colunas torsas, onde a luz e a sombra criam um efeito visual de grande beleza.</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="images/IMG_1167-570x760.jpg.webp" alt="Portal lateral do Mosteiro da Batalha" loading="lazy">
+                    <figcaption><strong>Portal lateral</strong> do Mosteiro, com rosácea rendilhada e arco em ogiva, enquadrando a torre principal que se eleva ao fundo.</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="images/IMG_1178-768x576.jpg.webp" alt="Interior com vitrais e crucifixo" loading="lazy">
+                    <figcaption>Interior do Mosteiro com o <strong>crucifixo central</strong> e os magníficos vitrais coloridos que filtram a luz natural para o espaço sagrado.</figcaption>
+                </figure>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Vistas Aéreas e Envolvente -->
+    <section class="section section-light">
+        <div class="container">
+            <h2 class="section-title">Vistas Aéreas e Envolvente</h2>
+            <p class="section-text" style="text-align:center; max-width:700px; margin:0 auto 2.5rem;">O Mosteiro visto do céu e a sua relação com a vila e a paisagem do centro de Portugal.</p>
+            <div class="gallery-grid">
+
+                <figure class="gallery-item gallery-item--wide">
+                    <img src="images/Capturar.PNG" alt="Vista aérea da Vila da Batalha com o Mosteiro" loading="lazy">
+                    <figcaption>Vista aérea da <strong>Vila da Batalha</strong> com o Mosteiro em primeiro plano, evidenciando a sua escala monumental em relação à malha urbana circundante.</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="images/inline_image_preview.jpg" alt="Vista aérea do conjunto monumental" loading="lazy">
+                    <figcaption>Vista aérea do conjunto monumental, mostrando os claustros, as Capelas Imperfeitas e a praça onde se encontra a estátua equestre de Nuno Álvares Pereira.</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="images/vertical-monastery-of-batalha-leiria-portugal-video.jpg" alt="Vista lateral aérea do Mosteiro" loading="lazy">
+                    <figcaption>Vista lateral e aérea do Mosteiro, com os jardins do Claustro Real visíveis e a envolvente verde da vila ao fundo.</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="images/1000_F_328982909_3Bfm4lrcQeslFlx1mxY01jqRUAU33aJw.jpg" alt="Drone sobre o Mosteiro e as Capelas Imperfeitas" loading="lazy">
+                    <figcaption>Imagem de drone sobre o Mosteiro, onde se distinguem claramente as <strong>Capelas Imperfeitas</strong> (lado esquerdo) e a nave principal, rodeadas pela vila.</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="images/_1408_mosteiro_batalha3_5911e39a6fc44_625e9c3503ead.jpg" alt="Vista aérea do Mosteiro e da estrada nacional" loading="lazy">
+                    <figcaption>Vista aérea que mostra a relação do Mosteiro com a estrada nacional e a expansão urbana da Batalha, resultante do desenvolvimento trazido pelos fundos europeus.</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="images/_1408_terraco_mosteiro4_5901d2af8faf0_625e9bef255b1.jpg" alt="Vista da vila a partir do telhado do Mosteiro" loading="lazy">
+                    <figcaption>Vista privilegiada da vila a partir dos <strong>terraços do Mosteiro</strong>, com as Capelas Imperfeitas em destaque e a praça principal ao fundo.</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="images/_mosteiro_batalha2_5900d0c839628_625e9b4daec22.jpg" alt="Estátua de Nuno Álvares Pereira" loading="lazy">
+                    <figcaption>A <strong>estátua equestre de Nuno Álvares Pereira</strong> em frente ao Mosteiro, homenagem ao condestável que liderou as tropas portuguesas na Batalha de Aljubarrota em 1385.</figcaption>
+                </figure>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. A Vila e a Ponte Boutaca -->
+    <section class="section section-dark">
+        <div class="container">
+            <h2 class="section-title section-title-light">A Vila e o Património Local</h2>
+            <p style="text-align:center; color:rgba(255,255,255,0.7); max-width:680px; margin:0 auto 2.5rem; font-size:0.97rem; line-height:1.6;">Para além do Mosteiro, a Batalha possui outros testemunhos patrimoniais que compõem a identidade da vila.</p>
+            <div class="gallery-grid">
+
+                <figure class="gallery-item gallery-item--wide">
+                    <img src="images/ponte-boutaca-15.jpg" alt="Ponte da Boutaca reabilitada" loading="lazy">
+                    <figcaption>A <strong>Ponte da Boutaca</strong>, estrutura histórica reabilitada com fundos europeus. Os seus arcos em estilo neogótico evocam a arquitetura do Mosteiro e são um dos ex-líbris do património local.</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="images/_ponte_boutaca1_5900d13025c5e_625e9c502de1c.jpg" alt="Ponte Boutaca — ângulo lateral" loading="lazy">
+                    <figcaption>Vista lateral da <strong>Ponte Boutaca</strong>, evidenciando a sucessão de arcos e os pináculos decorativos inspirados na arquitetura gótica do Mosteiro.</figcaption>
+                </figure>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INFORMAÇÕES PRÁTICAS -->
+    <section class="section section-light">
+        <div class="container container-narrow">
+            <div class="info-box">
+                <h2 class="info-box-title">Informações Práticas</h2>
+                <div class="info-grid">
+                    <div class="info-col">
+                        <h3 class="info-col-title">
+                            <svg class="info-col-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            Localização
+                        </h3>
+                        <p class="info-col-text">Praça Mouzinho de Albuquerque<br>2440-111 Batalha, Portugal</p>
+                    </div>
+                    <div class="info-col">
+                        <h3 class="info-col-title">
+                            <svg class="info-col-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            Horário
+                        </h3>
+                        <p class="info-col-text">Outubro a Março: 9h00 - 17h30<br>Abril a Setembro: 9h00 - 18h30<br>Encerrado: 1 jan, Domingo de Páscoa, 1 maio, 25 dez</p>
+                    </div>
+                </div>
+                <div class="info-alert">
+                    <p class="info-alert-text"><strong>Acesso 52:</strong> Desde agosto de 2024, residentes em Portugal têm entrada gratuita aos monumentos nacionais aos domingos e feriados, mediante apresentação de documento de identificação.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="container">
+            <blockquote class="quote">"O Mosteiro da Batalha é a memória em pedra da independência de Portugal."</blockquote>
+            <p class="quote-author">— UNESCO, 1983</p>
+        </div>
+    </section>
+
+    <section class="nav-section nav-section-dark">
+        <div class="container">
+            <div class="nav-buttons">
+                <a href="depois.html" class="nav-link-back nav-link-back-light">
+                    <svg class="nav-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Voltar às transformações
+                </a>
+                <a href="index.html" class="btn btn-primary">Página Inicial</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">Sobre o Projeto</h3>
+                    <p class="footer-text">Este site foi desenvolvido no âmbito do projeto de Serviço Digital, explorando as transformações da Vila da Batalha após a adesão de Portugal à União Europeia em 1986.</p>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Navegação</h3>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Página Inicial</a></li>
+                        <li><a href="antes.html">Como Era (Até 1986)</a></li>
+                        <li><a href="depois.html">Como Ficou (Pós 1986)</a></li>
+                        <li><a href="mosteiro.html">Mosteiro da Batalha</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Agrupamento de Escolas</h3>
+                    <a href="https://agbatalha.pt/portal/" target="_blank" rel="noopener noreferrer" class="footer-btn">
+                        <svg class="footer-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                        Visitar site do Agrupamento
+                    </a>
+                    <p class="footer-address">
+                        <svg class="footer-address-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Estrada da Freiria, 2440-062 Batalha
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="footer-credits">Vila da Batalha · Leiria · Portugal — vista pelos alunos do 12ºE de Serviço Digital</p>
+                <div class="footer-year"><span>2025</span><span class="eu-badge">UE</span></div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

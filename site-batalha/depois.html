@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Ficou - Vila da Batalha depois de 1986</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">B</div>
+                <div class="logo-text">
+                    <span class="logo-title">Batalha</span>
+                    <span class="logo-subtitle">1986-2025</span>
+                </div>
+            </a>
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Início</a>
+                <a href="antes.html" class="nav-link">Como Era</a>
+                <a href="depois.html" class="nav-link active">Como Ficou</a>
+                <a href="mosteiro.html" class="nav-link">Mosteiro</a>
+                <a href="../index.html" class="nav-link" style="border-left:1px solid rgba(255,255,255,0.3); padding-left:1.2rem; margin-left:0.5rem; opacity:0.8;">← Portugal em Rede</a>
+            </nav>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+        <nav class="nav-mobile" id="navMobile">
+            <a href="index.html" class="nav-mobile-link">Início</a>
+            <a href="antes.html" class="nav-mobile-link">Como Era</a>
+            <a href="depois.html" class="nav-mobile-link active">Como Ficou</a>
+            <a href="mosteiro.html" class="nav-mobile-link">Mosteiro</a>
+            <a href="../index.html" class="nav-mobile-link" style="opacity:0.75; border-top:1px solid rgba(255,255,255,0.15); margin-top:0.5rem; padding-top:0.8rem;">← Voltar ao Portugal em Rede</a>
+        </nav>
+    </header>
+
+    <section class="page-hero" style="background-image: url('https://images.pexels.com/photos/15926647/pexels-photo-15926647.jpeg?auto=compress&cs=tinysrgb&w=1920');">
+        <div class="page-hero-overlay page-hero-overlay-amber"></div>
+        <div class="page-hero-content">
+            <span class="page-hero-badge">1986 - Presente</span>
+            <h1 class="page-hero-title">Como Ficou a Batalha</h1>
+            <p class="page-hero-subtitle">Quatro décadas de transformação impulsionadas pela integração europeia</p>
+        </div>
+    </section>
+
+    <section class="section section-light">
+        <div class="container">
+            <div class="impact-box">
+                <h2 class="impact-title">O Impacto da União Europeia</h2>
+                <p class="impact-text">A adesão à Comunidade Europeia abriu portas a financiamentos que transformaram profundamente a Vila da Batalha. Os fundos estruturais permitiram investimentos em património, infraestruturas, educação e desenvolvimento turístico que de outra forma seriam impossíveis para um pequeno concelho português.</p>
+                <div class="impact-stats">
+                    <div class="impact-stat"><p class="impact-stat-value">39</p><p class="impact-stat-label">Anos na UE</p></div>
+                    <div class="impact-stat"><p class="impact-stat-value">+30%</p><p class="impact-stat-label">População</p></div>
+                    <div class="impact-stat"><p class="impact-stat-value">UNESCO</p><p class="impact-stat-label">Património</p></div>
+                    <div class="impact-stat"><p class="impact-stat-value">300K+</p><p class="impact-stat-label">Visitantes/ano</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-gray">
+        <div class="container">
+            <h2 class="section-title">Áreas de Transformação</h2>
+            <div class="transformations-grid">
+                <div class="transformation-card">
+                    <svg class="transformation-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <h3 class="transformation-title">Património Valorizado</h3>
+                    <p class="transformation-text">O Mosteiro da Batalha recebeu investimentos significativos de fundos europeus (Centro 2020, Portugal 2030) para conservação e restauro. Em 1989 foi classificado como Património Mundial pela UNESCO.</p>
+                    <span class="transformation-tag">3.º monumento mais visitado de Portugal</span>
+                </div>
+                <div class="transformation-card">
+                    <svg class="transformation-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"></path><path d="M5 21V7l8-4v18"></path><path d="M19 21V11l-6-4"></path></svg>
+                    <h3 class="transformation-title">Reabilitação Urbana</h3>
+                    <p class="transformation-text">O PARU (Plano de Ação de Regeneração Urbana) 2016-2020 transformou o centro histórico. Fachadas foram recuperadas, ruas pedonalizadas e espaços públicos requalificados.</p>
+                    <span class="transformation-tag">Investimento de milhões em reabilitação</span>
+                </div>
+                <div class="transformation-card">
+                    <svg class="transformation-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                    <h3 class="transformation-title">Infraestruturas Modernas</h3>
+                    <p class="transformation-text">A A19 e a melhoria das ligações rodo-ferroviárias aproximaram a Batalha de Lisboa e do Porto. O saneamento básico foi expandido para todo o concelho.</p>
+                    <span class="transformation-tag">Acesso facilitado a 1h de Lisboa</span>
+                </div>
+                <div class="transformation-card">
+                    <svg class="transformation-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                    <h3 class="transformation-title">Turismo Sustentável</h3>
+                    <p class="transformation-text">O turismo tornou-se motor económico. Centros de interpretação, museus e eventos culturais atraem visitantes todo o ano. A medida Acesso 52 (2024) democratizou o acesso aos monumentos.</p>
+                    <span class="transformation-tag">Mais de 300.000 visitantes anuais</span>
+                </div>
+                <div class="transformation-card">
+                    <svg class="transformation-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    <h3 class="transformation-title">Crescimento Demográfico</h3>
+                    <p class="transformation-text">A população cresceu de 12.588 (1981) para cerca de 16.500 (2023). Novas oportunidades atraíram jovens e famílias, revertendo o fluxo emigratório.</p>
+                    <span class="transformation-tag">+30% de crescimento populacional</span>
+                </div>
+                <div class="transformation-card">
+                    <svg class="transformation-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                    <h3 class="transformation-title">Fundos Europeus</h3>
+                    <p class="transformation-text">Milhões de euros de fundos estruturais foram investidos no concelho. Programas como o Centro 2020 e o PRR financiaram obras públicas, educação e património.</p>
+                    <span class="transformation-tag">Investimento comunitário significativo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light">
+        <div class="container container-narrow">
+            <h2 class="section-title">Linha do Tempo</h2>
+            <div class="timeline-vertical">
+                <div class="timeline-v-item"><div class="timeline-v-dot"></div><div class="timeline-v-content"><span class="timeline-v-year">1986</span><p class="timeline-v-text">Adesão de Portugal à CEE</p></div></div>
+                <div class="timeline-v-item"><div class="timeline-v-dot"></div><div class="timeline-v-content"><span class="timeline-v-year">1989</span><p class="timeline-v-text">Mosteiro classificado pela UNESCO</p></div></div>
+                <div class="timeline-v-item"><div class="timeline-v-dot"></div><div class="timeline-v-content"><span class="timeline-v-year">1990s</span><p class="timeline-v-text">Primeiros investimentos em infraestruturas</p></div></div>
+                <div class="timeline-v-item"><div class="timeline-v-dot"></div><div class="timeline-v-content"><span class="timeline-v-year">2000s</span><p class="timeline-v-text">Expansão do turismo e serviços</p></div></div>
+                <div class="timeline-v-item"><div class="timeline-v-dot"></div><div class="timeline-v-content"><span class="timeline-v-year">2016</span><p class="timeline-v-text">Início do PARU - Regeneração Urbana</p></div></div>
+                <div class="timeline-v-item"><div class="timeline-v-dot"></div><div class="timeline-v-content"><span class="timeline-v-year">2020</span><p class="timeline-v-text">Novos projetos Centro 2030</p></div></div>
+                <div class="timeline-v-item"><div class="timeline-v-dot"></div><div class="timeline-v-content"><span class="timeline-v-year">2024</span><p class="timeline-v-text">Medida Acesso 52 - Entrada gratuita</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container">
+            <h2 class="section-title section-title-light">Evolução Demográfica</h2>
+            <div class="chart-container">
+                <div class="chart-bar" style="height: 40%;"><div class="chart-bar-fill"></div><span class="chart-label">1981</span><span class="chart-value">12.588</span></div>
+                <div class="chart-bar" style="height: 50%;"><div class="chart-bar-fill"></div><span class="chart-label">1991</span><span class="chart-value">13.329</span></div>
+                <div class="chart-bar" style="height: 65%;"><div class="chart-bar-fill"></div><span class="chart-label">2001</span><span class="chart-value">15.002</span></div>
+                <div class="chart-bar" style="height: 75%;"><div class="chart-bar-fill"></div><span class="chart-label">2011</span><span class="chart-value">15.805</span></div>
+                <div class="chart-bar" style="height: 72%;"><div class="chart-bar-fill"></div><span class="chart-label">2021</span><span class="chart-value">15.557</span></div>
+                <div class="chart-bar" style="height: 85%;"><div class="chart-bar-fill"></div><span class="chart-label">2023</span><span class="chart-value">16.500</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="nav-section">
+        <div class="container">
+            <div class="nav-buttons">
+                <a href="antes.html" class="nav-link-back">
+                    <svg class="nav-link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Ver como era antes
+                </a>
+                <a href="mosteiro.html" class="btn btn-primary">Conhecer o Mosteiro →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">Sobre o Projeto</h3>
+                    <p class="footer-text">Este site foi desenvolvido no âmbito do projeto de Serviço Digital, explorando as transformações da Vila da Batalha após a adesão de Portugal à União Europeia em 1986.</p>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Navegação</h3>
+                    <ul class="footer-nav">
+                        <li><a href="index.html">Página Inicial</a></li>
+                        <li><a href="antes.html">Como Era (Até 1986)</a></li>
+                        <li><a href="depois.html">Como Ficou (Pós 1986)</a></li>
+                        <li><a href="mosteiro.html">Mosteiro da Batalha</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-title">Agrupamento de Escolas</h3>
+                    <a href="https://agbatalha.pt/portal/" target="_blank" rel="noopener noreferrer" class="footer-btn">
+                        <svg class="footer-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                        Visitar site do Agrupamento
+                    </a>
+                    <p class="footer-address">
+                        <svg class="footer-address-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Estrada da Freiria, 2440-062 Batalha
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="footer-credits">Vila da Batalha · Leiria · Portugal — vista pelos alunos do 12ºE de Serviço Digital</p>
+                <div class="footer-year"><span>2025</span><span class="eu-badge">UE</span></div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
